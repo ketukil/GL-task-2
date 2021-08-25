@@ -38,8 +38,8 @@ const int32_t SECOND_DIVIDER = 5;
 // │ Response messages                                                         │
 // └───────────────────────────────────────────────────────────────────────────┘
 
-const char *DIV_BY_FIRST_MSG = "Global";
-const char *DIV_BY_SECOND_MSG = "Logic";
+const char *const DIV_BY_FIRST_MSG = "Global";
+const char *const DIV_BY_SECOND_MSG = "Logic";
 
 /**
  * @brief Checks divisibility by FIRST_DIVIDER and SECOND_DIVDER number
