@@ -1,14 +1,31 @@
 # Description
 
-A random ASCII character is received every 100ms. We need to find a sequence of "GLROX" characters. There can be other characters in between! Once found- call a Found function and wait for the sequence again, if not found then wait until this sequence is found. If a new character does not come in 2 seconds call Timeout function and wait for the whole "GLROX" again even if previously received part of the sequence. The Process function which is your entry point is called every 100ms.
+The code should take integers from defined range e.g. 0-100 and process them as follows.
 
-Expected results:
+- If a number is divisible by 3, print “Global”
+- If a number is divisible by 5, print “Logic”
+- If a number is divisible by 3 AND by 5, print “GlobalLogic” in a single line
+- Each printout should be done on a separate line.
+
+Expected results:  
 
 Input | Output
 --- | --- |
-GabfdbLbsfbdRbasgOX | TRUE
-AA4hfghdAAGLROX | TRUE
-GLRObas832hXbasb | TRUE
-GLROobiapjso83basb | FALSE (no X)
-glroxbpoaijspoiasjdb | FALSE (lower case)
-GLpboiasjdbpoijOX | FALSE (no R)
+0 | 0
+1 | 1
+2 | 2
+3 | Global
+4 | 4
+5 | Logic
+6 | Global
+7 | 7
+8 | 8
+9 | Global
+10 | Logic
+11 | 11
+12 | Global
+13 | 13
+14 | 14
+15 | GlobalLogic
+... | ...
+100 | Logic
