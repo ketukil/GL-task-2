@@ -9,10 +9,14 @@
  * 
  */
 
+#include "div_test.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "div_test.h"
+
+// ┌───────────────────────────────────────────────────────────────────────────┐
+// │ Enums, Variables, Structures, Typedefs                                    │
+// └───────────────────────────────────────────────────────────────────────────┘
 
 typedef enum DIVISIBILITY_SCORE
 {
@@ -23,10 +27,17 @@ typedef enum DIVISIBILITY_SCORE
     DIVISIBLE_BY_BOTH = DIVISIBLE_BY_FIRST | DIVISIBLE_BY_SECOND
 } dv_score_t;
 
-// Test divisibility with following numbers
-#define FIRST_DIVIDER 3
-#define SECOND_DIVIDER 5
-// Response messages
+// ┌───────────────────────────────────────────────────────────────────────────┐
+// │ Divisible with following numbers                                          │
+// └───────────────────────────────────────────────────────────────────────────┘
+
+const int32_t FIRST_DIVIDER = 3;
+const int32_t SECOND_DIVIDER = 5;
+
+// ┌───────────────────────────────────────────────────────────────────────────┐
+// │ Response messages                                                         │
+// └───────────────────────────────────────────────────────────────────────────┘
+
 const char *DIV_BY_FIRST_MSG = "Global";
 const char *DIV_BY_SECOND_MSG = "Logic";
 
@@ -40,12 +51,15 @@ const char *DIV_BY_SECOND_MSG = "Logic";
  */
 char *check_divisibility(int32_t number)
 {
-    size_t max_len;
     dv_score_t score = NOT_DIVISIBLE;
     static char *message = NULL;
 
-    max_len = strlen(DIV_BY_FIRST_MSG) + strlen(DIV_BY_SECOND_MSG) + 1;
-    message = (char *)realloc((void *)message, max_len);
+    if (message == NULL)
+    {
+        size_t max_len;
+        max_len = strlen(DIV_BY_FIRST_MSG) + strlen(DIV_BY_SECOND_MSG) + 1;
+        message = (char *)malloc(max_len);
+    }
 
     if (number % FIRST_DIVIDER == 0)
     {

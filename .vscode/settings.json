@@ -1,0 +1,11 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/dev/GL-task-2/output",
+            "binaryPath": "/home/dev/GL-task-2/output/main",
+            "binaryArgs": []
+        }
+    ]
+}
