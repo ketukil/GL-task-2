@@ -23,7 +23,7 @@ int32_t main(void)
     printf("Enter check range (lower upper): ");
     if (scanf("%d %d", &lower, &upper) != 2)
     {
-        printf("Invalid input.\n")
+        printf("Invalid input.\n");
         return (-1);
     }
 
